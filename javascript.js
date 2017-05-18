@@ -5,11 +5,18 @@ $( document ).ready(function() {
     });
 });
 
+// Using the following API to access Game of Thrones Quotes.
+// https://github.com/wsizoo/game-of-thrones-quotes
 
 
 function quoteGeneration() {
       console.log("onClick has fired");
-      $.getJSON("https://crossorigin.me/http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", function(a) {
-        $("#quoteReturn").append(a[0].content + "<p>— " + a[0].title + "</p>")
+      $.getJSON("https://got-quotes.herokuapp.com/quotes", function(a) {
+
+       console.log(a['quote']);
+       console.log(a['character']);
+
+        $("#quoteReturn").html(a['quote']);
+        $("#characterReturn").html(a['character']);
       });
 }
