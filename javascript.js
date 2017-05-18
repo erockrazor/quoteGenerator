@@ -9,7 +9,7 @@ $( document ).ready(function() {
 
 function quoteGeneration() {
       console.log("onClick has fired");
-      $.getJSON("http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", function(a) {
+      $.getJSON("https://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1", function(a) {
         $("#quoteReturn").append(a[0].content + "<p>— " + a[0].title + "</p>")
       });
 }
