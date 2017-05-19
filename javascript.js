@@ -1,8 +1,11 @@
-$( document ).ready(function() {
-    console.log("javascript file has loaded");
-    $(".quoteButton").click(function(){
-      quoteGeneration();
-    });
+/*jslint browser: true*/
+/*global $, jQuery, alert*/
+
+$(document).ready(function() {
+  // console.log("javascript file has loaded");
+  $(".quoteButton").click(function() {
+    quoteGeneration();
+  });
 });
 
 // Using the following API to access Game of Thrones Quotes.
@@ -10,13 +13,8 @@ $( document ).ready(function() {
 
 
 function quoteGeneration() {
-      console.log("onClick has fired");
-      $.getJSON("https://got-quotes.herokuapp.com/quotes", function(a) {
-
-       console.log(a['quote']);
-       console.log(a['character']);
-
-        $("#quoteReturn").html(a['quote']);
-        $("#characterReturn").html(a['character']);
-      });
+  $.getJSON("https://got-quotes.herokuapp.com/quotes", function(a) {
+    $("#quoteReturn").html('"' + a.quote + '"');
+    $("#characterReturn").html('<h3><b>-' + a.character + '</b></h3>');
+  });
 }

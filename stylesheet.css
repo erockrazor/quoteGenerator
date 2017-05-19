@@ -1,0 +1,11 @@
+@media (min-width: 1200px) {
+  .container {
+    max-width: 906px;
+  }
+
+.quote {
+  color: black;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2em;
+  letter-spacing: 0.1em;
+}
